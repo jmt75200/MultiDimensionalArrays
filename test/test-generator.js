@@ -43,7 +43,7 @@ describe("mda", function() {
         expect( curr ).to.be.a('array');
         curr.should.have.length(3);
       });
-    });//end of first it
+    });//end of first it for generator_2d
 
     it("Return an array with 4 arrays each with 3 values when one arguement is given with a value of 4.", function() {
       var result = mda.generator_2d(4);
@@ -55,7 +55,7 @@ describe("mda", function() {
         expect( curr ).to.be.a('array');
         curr.should.have.length(3);
       });
-    });//end of second it
+    });//end of second it for generator_2d
 
     it("Return an array with 5 arrays with 4 values each, when two arguments with a value of 5 and 4", function() {
       var result = mda.generator_2d(5,4);
@@ -69,7 +69,26 @@ describe("mda", function() {
       });
       
     });//end of seconf it
+  }); //end of second describe for generator_2d
 
-  }); //end of second describe
+  describe("generator_3d", function() {
+    it("Return an array with 3 arrays each with 4 arrays and 5 values, when three arguments ", function() {
+        var result = mda.generator_3d(3,4,5);
+
+        expect( result ).to.be.a('array');
+        result.should.have.length(3);
+
+        result.forEach(function(curr){
+          expect( curr ).to.be.a('array');
+          curr.should.have.length(4);
+
+          curr.forEach(function(tier3){
+            expect( tier3 ).to.be.a('array');
+            tier3.should.have.length(5);
+          });
+        });//end of first forEach
+
+      });//end of first it in generator_3d
+  });//end of describe generator_3d
 
 });

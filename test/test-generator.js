@@ -34,6 +34,20 @@ describe("mda", function() {
 
   describe("generator_2d", function() {
     
+    it("Return an array with 3 values containing 3 arrays with random values when no argument is given", function() {
+      var result = mda.generator_2d();
+
+      expect( result ).to.be.a('array');
+      result.should.have.length(3);
+
+      result.forEach(function(curr){
+          expect( result ).to.be.a('array');
+          result.should.have.length(3);
+      });
+
+      
+
+    });
 
   });
 

@@ -8,7 +8,7 @@ module.exports = {
   },
 
   generator_2d : function (){
-    return [ 0,1,1,0 ];
+
 
   },
 

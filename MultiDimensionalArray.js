@@ -1,8 +1,9 @@
 module.exports = {
 
   generator_1d : function (){
-    return [ 0,1,1 ];
-
+    var array_1d = [ 0,1,1 ];
+    
+    return array_1d;
 
   },
 

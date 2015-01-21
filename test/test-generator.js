@@ -14,6 +14,14 @@ describe("mda", function() {
       result.should.have.length(3);
     
     });
+
+    it("Return empty array when an argument is passed in and not a number", function() {
+      var result = mda.generator_1d('potato');
+
+      expect( result ).to.be.a('array');
+      result.should.have.length(0);
+
+    });
   
   }); //end of first describe
 

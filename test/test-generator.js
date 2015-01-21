@@ -58,8 +58,17 @@ describe("mda", function() {
     });//end of second it
 
     it("Return an array with 5 arrays with 4 values each, when two arguments with a value of 5 and 4", function() {
+      var result = mda.generator_2d(5,4);
+
+      expect( result ).to.be.a('array');
+      result.should.have.length(5);
+
+      result.forEach(function(curr){
+        expect( curr ).to.be.a('array');
+        curr.should.have.length(4);
+      });
       
-    });
+    });//end of seconf it
 
   }); //end of second describe
 

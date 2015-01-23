@@ -6,13 +6,20 @@ var mda = require('../MultiDimensionalArray.js');
 describe("mda", function() {
 
   describe("counter", function() {
-    it("Return number of truthy values with the mda.counter method with one argument, sample_array. ", function() {
-      var result = MultiDimensionalArray.count(sample_array);
+    
+    it("Should be defined as a function", function() {
+      expect(mda.count).to.be.a('function');
+      expect(mda.count).to.be.instanceOf(Function);
 
-        result.reduce(function( curr ){
-          expect( curr ).to.be.true();
-          
-        });
+    });
+
+    it("Should return number of truthy values in sample_array.", function() {
+      
+      var sample_array = [1,0,0,1,0,0,0,0,1];
+      var result = mda.count(sample_array);
+
+      expect( results ).to.equal(3);
+        
     });
 
   });// end of describe counter

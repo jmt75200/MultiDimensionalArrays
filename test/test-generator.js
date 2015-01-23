@@ -7,6 +7,11 @@ describe("mda", function() {
    
   describe('generator_1d', function() {
     
+    it("Should be defined as a function", function() {
+      expect(mda.generator_1d).to.be.a('function');
+
+    });
+
     it('Returns an array with 3 random boolean values when no arguments are given', function() {
       var result = mda.generator_1d();
       
@@ -25,13 +30,17 @@ describe("mda", function() {
       var result = mda.generator_1d('potato');
 
       expect( result ).to.be.a('array');
-      result.should.have.length(0);
+      expect( result ).to.be.empty();
 
     });//end of third it
   
   }); //end of first describe
 
   describe("generator_2d", function() {
+    it("Should be defined as a function", function() {
+      expect( mda.generator_2d ).to.be.a('function');
+
+    });
     
     it("Return an array with 3 values containing 3 arrays with random values when no argument is given", function() {
       var result = mda.generator_2d();
@@ -42,6 +51,11 @@ describe("mda", function() {
       result.forEach(function(curr){
         expect( curr ).to.be.a('array');
         curr.should.have.length(3);
+
+        // curr.forEach(function(value){
+        //   expect.value.to.be.a('number');
+        //   return value === 0 || value === 1;
+        // });
       });
     });//end of first it for generator_2d
 
@@ -72,6 +86,12 @@ describe("mda", function() {
   }); //end of second describe for generator_2d
 
   describe("generator_3d", function() {
+    it("Should be defined as a function", function() {
+      expect(mda.generator_3d).to.be.a('function');
+
+
+    });
+
     it("Return an array with 3 arrays each with 4 arrays and 5 values, when three arguments ", function() {
         var result = mda.generator_3d(3,4,5);
 
